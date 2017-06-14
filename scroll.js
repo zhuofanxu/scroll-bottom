@@ -67,7 +67,7 @@
      * 添加浏览器滚动到底部事件监听器 通过监听window scroll事件实现
      * @param {function} handler 事件触发时的回调函数
      */
-    Scroll.addScrollToBottomEventLisener = function (handler) {
+    Scroll.add = function (handler) {
         // 可选配置参数
         if(typeof arguments[1] === 'object') {
             config.handling = typeof arguments[1].handling === 'boolean' ? arguments[1].handling : config.handling;
@@ -91,7 +91,7 @@
                 
                 if(config.scrollDirection === 'down' && offset <= config.distance) {
                     config.handling = true;
-                    // 调用滚动触底处理函数 由addScrollToBottomEventLisener使用用者传入
+                    // 调用滚动触底处理函数 由add使用用者传入
                     handler();
                 }
                 // console.log(offset);
@@ -119,13 +119,13 @@
      * 移除浏览器滚动到底部事件监听器
      * @param {function} handler 事件处理函数
      */
-    Scroll.removeScrollToBottomEventLisener = function () {
+    Scroll.remove = function () {
         window.removeEventListener('scroll', config.scrollEventHandler);
     }
     /**
      * 浏览器滑动触底事件处理完毕
      */
-    Scroll.scrollBottomHanleDone = function () {
+    Scroll.handleDone = function () {
         config.handling = false;
     }
     
