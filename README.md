@@ -8,7 +8,7 @@ Scroll 模块提供添加和移除浏览器滚动条触底事件监听，兼容a
 ```typescript
 Scroll.add(handler: function, options?: object);    // 添加事件监听
 Scroll.remove();                                    // 移除事件监听
-Scroll.handleDone();                                // handler 完成时调用
+Scroll.handleDone();                                // handler完成时调用
 ```
 ## options 
 可选配置参数
